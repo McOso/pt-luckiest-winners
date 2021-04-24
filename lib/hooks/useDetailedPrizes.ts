@@ -55,24 +55,29 @@ export const useDetailedPrizes = (data: PrizePoolData, setBigWinners: React.Disp
     })
   )
 
-  useEffect(() =>{
-    if (results.some(x => x.isError)){
-      console.error(JSON.stringify(results.find(x => x.error)))
-    }
-    else if (results.some(x => x.isLoading)){
-      // maybe set loading display
-    }
-    else if (results.every(x => x.status === 'success')){
-      const winnerDetails = results.map((x, index) => {
-        detailedPrizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
-        const odds = calculateOdds(detailedPrizes[index])
-        const winnerData = mapWinnerData(detailedPrizes[index], odds)
-        return winnerData;
-      })
+  return {
+    detailedPrizes,
+    results
+  };
 
-      const bigWinners = processWinnerData(winnerDetails);
-      setBigWinners(bigWinners);
-    }
+  // useEffect(() =>{
+  //   if (results.some(x => x.isError)){
+  //     console.error(JSON.stringify(results.find(x => x.error)))
+  //   }
+  //   else if (results.some(x => x.isLoading)){
+  //     // maybe set loading display
+  //   }
+  //   else if (results.every(x => x.status === 'success')){
+  //     const winnerDetails = results.map((x, index) => {
+  //       detailedPrizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
+  //       const odds = calculateOdds(detailedPrizes[index])
+  //       const winnerData = mapWinnerData(detailedPrizes[index], odds)
+  //       return winnerData;
+  //     })
 
-  }, [results])
+  //     const bigWinners = processWinnerData(winnerDetails);
+  //     setBigWinners(bigWinners);
+  //   }
+
+  // }, [results])
 }
