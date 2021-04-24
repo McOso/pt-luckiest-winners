@@ -9,11 +9,10 @@ export const LeaderBoard = () => {
   const {status, data, error, isFetching} = usePrizePoolWinners();
 
   return (
-    <Col xs={12} md={12}>
-      {status === "loading" ? (<h4>Loading..</h4>) : status === "error" ? (
+    <>
+    {status === "loading" ? (<h4>Loading..</h4>) : status === "error" ? (
           <span>Error: {JSON.stringify(error)}</span>
         ) : <BigWinners mdata={data} />}
-      <p>This is the LeaderBoard</p>
-    </Col>
+    </>
   )
 }

@@ -18,9 +18,7 @@ export default function Home() {
           PoolTogether Luckiest Winners Leaderboard
         </h1>
 
-        <Row>
-          <LeaderBoard />
-        </Row>
+        <LeaderBoard />
                 
       </main>
 

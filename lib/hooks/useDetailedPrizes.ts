@@ -1,11 +1,12 @@
 import { useWinnerBalance } from "./useWinnerBalance";
 import { WinnerData, PrizeDetails } from "../interfaces/local-types";
-import { AwardedExternalErc20Tokens, Prize, PrizePoolData } from "../interfaces/response-types";
+import { AwardedExternalErc20Tokens, BalanceData, Prize, PrizePoolData } from "../interfaces/response-types";
 import { calculateOdds } from "../utils/calculateOdds";
 import { useEffect, useState } from 'react'
 import { mapWinnerData } from "../utils/mapWinnerData";
 import { processWinnerData } from "../utils/processWinnerData";
-import { QueryClient } from "react-query";
+import { QueryClient, useQueries } from "react-query";
+import { fetchWinnerBalance } from "../utils/fetchWinnerBalance";
 
 
 export const useDetailedPrizes = (data: PrizePoolData, setBigWinners: React.Dispatch<React.SetStateAction<WinnerData[]>>) => {
@@ -38,30 +39,45 @@ export const useDetailedPrizes = (data: PrizePoolData, setBigWinners: React.Disp
     });
   });
 
-  const [winnerDetails, setWinnerDetails] = useState(new Array<WinnerData>());
+  //const [winnerDetails, setWinnerDetails] = useState(new Array<WinnerData>());
 
-  for (let i = 0; i < 300; i++) {
-    let lockBlock, winnerAddress, tokenId;
-
-    if (detailedPrizes.length > i){
-      lockBlock = detailedPrizes[i].lockBlock;
-      winnerAddress = detailedPrizes[i].winner;
-      tokenId = detailedPrizes[i].id;
-    }
-    const {status, data, error, isFetching} = useWinnerBalance(lockBlock ? parseInt(lockBlock) : null, winnerAddress, tokenId);
-    useEffect(() => {
-      if (status === 'success' && data && data.controlledTokenBalances && data.controlledTokenBalances[0]){
-        detailedPrizes[i].balance = data.controlledTokenBalances[0].balance
-        const odds = calculateOdds(detailedPrizes[i])
-        setWinnerDetails(prevArr => [...prevArr, mapWinnerData(detailedPrizes[i], odds)])
+  const results = useQueries(
+    detailedPrizes.map(prize => {
+      let lockBlock: number;
+      if (prize.lockBlock){
+        lockBlock = Number(prize.lockBlock)
       }
-    }, [data])
-  }
+      return {
+        queryKey: ['winnerBalance', lockBlock, prize.winner, prize.id],
+        queryFn: () => fetchWinnerBalance(lockBlock, prize.winner, prize.id),
+        enabled: !!lockBlock
+      }
+    })
+  )
 
-  useEffect(() =>{
-    if (winnerDetails.length === detailedPrizes.length){
-      const bigWinners = processWinnerData(winnerDetails);
-      setBigWinners(bigWinners);
-    }
-  }, [winnerDetails])
+  return {
+    detailedPrizes,
+    results
+  };
+
+  // useEffect(() =>{
+  //   if (results.some(x => x.isError)){
+  //     console.error(JSON.stringify(results.find(x => x.error)))
+  //   }
+  //   else if (results.some(x => x.isLoading)){
+  //     // maybe set loading display
+  //   }
+  //   else if (results.every(x => x.status === 'success')){
+  //     const winnerDetails = results.map((x, index) => {
+  //       detailedPrizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
+  //       const odds = calculateOdds(detailedPrizes[index])
+  //       const winnerData = mapWinnerData(detailedPrizes[index], odds)
+  //       return winnerData;
+  //     })
+
+  //     const bigWinners = processWinnerData(winnerDetails);
+  //     setBigWinners(bigWinners);
+  //   }
+
+  // }, [results])
 }
