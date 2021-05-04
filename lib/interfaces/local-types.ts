@@ -22,10 +22,13 @@ export interface WinnerData {
   winnings: number,
   balance: number,
   odds: number,
-  externalAwards?: ExternalAward[]
+  externalAwards?: ExternalAward[],
+  grossUSDWinnings?: number
 }
 
 export interface ExternalAward {
+  address: string,
   symbol: string,
-  amount: number
+  amount: number,
+  amountUSD?: number
 }

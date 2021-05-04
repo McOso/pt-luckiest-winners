@@ -19,6 +19,7 @@ export const mapWinnerData = (prizeDetails: PrizeDetails, odds: number) => {
     winner.externalAwards = prizeDetails.additionalAward.map((award) => {
       const extraWinnings = Number(ethers.utils.formatUnits(award.balanceAwarded, Number(award.decimals)))
       const extAward: ExternalAward = {
+        address: getTokenAddress(award.id),
         symbol: award.symbol,
         amount: extraWinnings
       }
@@ -27,4 +28,11 @@ export const mapWinnerData = (prizeDetails: PrizeDetails, odds: number) => {
   }
 
   return winner;
+}
+
+const getTokenAddress = (concatted: string): string => {
+  const splitted = concatted.split('-');
+  if (splitted.length === 3)
+    return splitted[2];
+  return '0x0';
 }
