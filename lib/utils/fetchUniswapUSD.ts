@@ -4,13 +4,12 @@ import { BalanceData } from "../interfaces/response-types";
 export const fetchUniswapUSD = async (lBlock, tId: string) => {
 
   const ENDPOINT = process.env.PT_UNISWAP_ENDPOINT_URI;
-  const USDC_ADDRESS = process.env.PT_USDC_MAIN_ADDRESS;
 
   const data: BalanceData = await request(
     ENDPOINT,
     gql`
-      query UniswapUSD($lockBlock: Int, $tokenAddress: ID!, $usdcAddress: ID!){
-        tokens(where: {id_in: [$tokenAddress, $usdcAddress]}, block: {number: $lockBlock}) {
+      query UniswapUSD($lockBlock: Int, $tokenAddress: ID!){
+        token(id: $tokenAddress, block: {number: $lockBlock}) {
           id
           symbol
           derivedETH
@@ -19,8 +18,7 @@ export const fetchUniswapUSD = async (lBlock, tId: string) => {
     `,
     {
       lockBlock: lBlock,
-      tokenAddress: tId,
-      usdcAddress: USDC_ADDRESS
+      tokenAddress: tId
     }
   );
   return data;

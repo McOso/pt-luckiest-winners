@@ -1,4 +1,5 @@
 import React from 'react'
+import { calculateGrossWinnings } from '../utils/calculateGrossWinnings';
 import { calculateUSD } from '../utils/calculateUSD'
 
 export const DisplayLootBox = (props) => {
@@ -6,10 +7,21 @@ export const DisplayLootBox = (props) => {
 
   const totals = calculateUSD(mdata, mresults);
 
+  const gross = calculateGrossWinnings(mdata, totals);
+
   return (
     <>
-    <td></td>
-    <td></td>
+    <td>
+    {totals.map((award, index) => {
+          return (
+            <>
+            <p>{award.amount.toPrecision(8) + ' ' + award.symbol}</p>
+            <p>{'$' + award.amountUSD.toFixed(2)}</p>
+            </>
+          )
+        })}
+    </td>
+    <td>{'$' + gross.toFixed(2)}</td>
     </>
   )
 }
