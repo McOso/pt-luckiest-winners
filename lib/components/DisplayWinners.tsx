@@ -4,6 +4,7 @@ import { BalanceData } from '../interfaces/response-types';
 import { calculateOdds } from '../utils/calculateOdds';
 import { mapWinnerData } from '../utils/mapWinnerData';
 import { processWinnerData } from '../utils/processWinnerData';
+import { LootBoxDetails } from './LootBoxDetails';
 
 export const DisplayWinners = (props) => {
   const { mprizes, mresults } = props
@@ -46,8 +47,7 @@ export const DisplayWinners = (props) => {
               <td>{winner.balance.toFixed(2)}</td>
               <td>1 in {Math.floor(winner.odds)}</td>
               <td>{winner.winnings.toFixed(2) + ' ' + winner.poolSymbol}</td>
-              <td>extras</td>
-              <td>add everything up</td>
+              <LootBoxDetails mdata={winner}/>
             </tr>
           )
         })}

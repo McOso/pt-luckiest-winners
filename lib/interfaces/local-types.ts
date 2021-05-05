@@ -16,6 +16,7 @@ export interface PrizeDetails {
 }
 
 export interface WinnerData {
+  lockBlock: number,
   address: string,
   poolSymbol: string,
   winDate: Date,

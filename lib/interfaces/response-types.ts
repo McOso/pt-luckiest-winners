@@ -44,3 +44,9 @@ export interface BalanceData {
 export interface ControlledTokenBalance {
   balance: [string]
 }
+
+export interface UniTokenData {
+  id: string,
+  symbol: string,
+  derivedETH: string
+}

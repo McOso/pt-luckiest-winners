@@ -7,6 +7,7 @@ export const mapWinnerData = (prizeDetails: PrizeDetails, odds: number) => {
   const dateWon = new Date(Number(prizeDetails.awardedTimestamp) * 1000)
 
   const winner: WinnerData = {
+    lockBlock: prizeDetails.lockBlock,
     address: prizeDetails.winner,
     poolSymbol: prizeDetails.underlyingCollateralSymbol,
     winDate: dateWon,
