@@ -5,6 +5,7 @@ export interface PrizePoolData {
 
 export interface PrizePool {
   underlyingCollateralSymbol: string,
+  underlyingCollateralToken: string,
   prizes: [Prize]
 }
 
@@ -43,4 +44,13 @@ export interface BalanceData {
 
 export interface ControlledTokenBalance {
   balance: [string]
+}
+
+export interface UniTokenDataResult{
+  token: UniTokenData
+}
+export interface UniTokenData {
+  id: string,
+  symbol: string,
+  derivedETH: string
 }

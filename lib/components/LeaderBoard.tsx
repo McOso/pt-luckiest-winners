@@ -1,12 +1,9 @@
 import React from 'react'
-import { useQueryClient } from 'react-query';
 import { usePrizePoolWinners } from '../hooks/usePrizePoolWinners';
-import { Col } from 'react-bootstrap';
 import { BigWinners } from './BigWinners';
 
 export const LeaderBoard = () => {
-  const queryClient = useQueryClient();
-  const {status, data, error, isFetching} = usePrizePoolWinners();
+  const {status, data, error} = usePrizePoolWinners();
 
   return (
     <>

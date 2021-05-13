@@ -4,6 +4,7 @@ import { BalanceData } from '../interfaces/response-types';
 import { calculateOdds } from '../utils/calculateOdds';
 import { mapWinnerData } from '../utils/mapWinnerData';
 import { processWinnerData } from '../utils/processWinnerData';
+import { LootBoxDetails } from './LootBoxDetails';
 
 export const DisplayWinners = (props) => {
   const { mprizes, mresults } = props
@@ -19,7 +20,6 @@ export const DisplayWinners = (props) => {
   // TODO: 
   //  - truncate winner address => 0xe23..cf4
   //  - display lootbox winnings in a meaningful manner
-  //  - display total winnings in $ format
   return (
     <Table striped bordered hover variant="dark">
       <thead>
@@ -46,8 +46,7 @@ export const DisplayWinners = (props) => {
               <td>{winner.balance.toFixed(2)}</td>
               <td>1 in {Math.floor(winner.odds)}</td>
               <td>{winner.winnings.toFixed(2) + ' ' + winner.poolSymbol}</td>
-              <td>extras</td>
-              <td>add everything up</td>
+              <LootBoxDetails mdata={winner}/>
             </tr>
           )
         })}

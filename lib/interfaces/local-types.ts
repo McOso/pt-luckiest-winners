@@ -1,8 +1,9 @@
 import { AwardedExternalErc20Tokens } from "./response-types";
 
-// id = Token.id
+// id = Token.id << which is token address
 export interface PrizeDetails {
   underlyingCollateralSymbol: string,
+  underlyingCollateralToken: string,
   awardedTimestamp: string,
   lockBlock: number,
   totalTicketSupply: string,
@@ -16,8 +17,10 @@ export interface PrizeDetails {
 }
 
 export interface WinnerData {
+  lockBlock: number,
   address: string,
   poolSymbol: string,
+  poolToken: string,
   winDate: Date,
   winnings: number,
   balance: number,
