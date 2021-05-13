@@ -5,6 +5,7 @@ export interface PrizePoolData {
 
 export interface PrizePool {
   underlyingCollateralSymbol: string,
+  underlyingCollateralToken: string,
   prizes: [Prize]
 }
 

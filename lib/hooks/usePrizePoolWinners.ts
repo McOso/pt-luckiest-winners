@@ -12,6 +12,7 @@ export const usePrizePoolWinners = () => {
         query {
           prizePools(where: {owner: "0x42cd8312d2bce04277dd5161832460e95b24262e"}){
             underlyingCollateralSymbol
+            underlyingCollateralToken
             prizes{
               awardedTimestamp
               lockBlock

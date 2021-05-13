@@ -30,7 +30,12 @@ export const calculateUSD = (winner: WinnerData, results: UseQueryResult<UniToke
 
   const totals: ExternalAward[] = lookupTokens.map((tokenData, index) => {
     const tokenPrice = usdOffset * parseFloat(tokenData.derivedETH);
-    const extAward = winner.externalAwards[index];
+    let extAward: ExternalAward;
+    if (!(winner.externalAwards) || (index + 1) > winner.externalAwards.length){ // if we enter here than we must be getting price for main prize of non-stablecoin pool
+      extAward = {address: winner.poolToken, symbol: winner.poolSymbol, amount: winner.winnings};
+    }else{
+      extAward = winner.externalAwards[index];
+    }
     extAward.amountUSD = tokenPrice * extAward.amount;
     return extAward;
   })

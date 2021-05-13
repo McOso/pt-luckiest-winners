@@ -7,16 +7,25 @@ export const useUniswapUSD = (winnerData: WinnerData) => {
   const externalAwards = winnerData.externalAwards ? winnerData.externalAwards : [{address: 'NAN', symbol: 'NAN', amount: 0}] as ExternalAward[]
 
   const lookupAddresses = externalAwards.flatMap((award) => award.address)
-  if (!lookupAddresses.find((x) => x === 'NAN')){
+  if (!lookupAddresses.find((x) => x === 'NAN') || (!(winnerData.poolSymbol === 'USDC' || winnerData.poolSymbol === 'DAI'))){
+    if (!(winnerData.poolSymbol === 'USDC' || winnerData.poolSymbol === 'DAI')){
+      const indexToTrash = lookupAddresses.findIndex(x => x === 'NAN');
+      if (indexToTrash > -1){
+        lookupAddresses.splice(indexToTrash, 1)
+      }
+      lookupAddresses.push(winnerData.poolToken);
+    }
     lookupAddresses.push(process.env.PT_USDC_MAIN_ADDRESS)
   }
 
-  let lockBlock = Number(winnerData.lockBlock)
+  let lockBlock;
 
   const results = useQueries(
     lookupAddresses.map(addy => {
       if (addy === 'NAN'){
         lockBlock = undefined
+      }else{
+        lockBlock = Number(winnerData.lockBlock)
       }
       return {
         queryKey: ['uniswapToUSD', lockBlock, addy],

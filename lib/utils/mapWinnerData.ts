@@ -10,6 +10,7 @@ export const mapWinnerData = (prizeDetails: PrizeDetails, odds: number) => {
     lockBlock: prizeDetails.lockBlock,
     address: prizeDetails.winner,
     poolSymbol: prizeDetails.underlyingCollateralSymbol,
+    poolToken: prizeDetails.underlyingCollateralToken,
     winDate: dateWon,
     winnings: usersWinnings,
     balance: usersBalance,

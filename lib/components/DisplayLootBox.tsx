@@ -12,14 +12,14 @@ export const DisplayLootBox = (props) => {
   return (
     <>
     <td>
-    {totals.map((award, index) => {
+    {mdata.externalAwards ? totals.map((award, index) => {
           return (
             <>
             <p>{award.amount.toPrecision(8) + ' ' + award.symbol}</p>
             <p>{'$' + award.amountUSD.toFixed(2)}</p>
             </>
           )
-        })}
+        }) : <></>}
     </td>
     <td>{'$' + gross.toFixed(2)}</td>
     </>

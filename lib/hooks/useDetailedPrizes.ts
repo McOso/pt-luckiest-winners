@@ -17,6 +17,7 @@ export const useDetailedPrizes = (data: PrizePoolData) => {
       prize.awardedControlledTokens.forEach((award) => {
         let details: PrizeDetails = {
           underlyingCollateralSymbol: prizePool.underlyingCollateralSymbol,
+          underlyingCollateralToken: prizePool.underlyingCollateralToken,
           awardedTimestamp: prize.awardedTimestamp,
           lockBlock: prize.lockBlock,
           totalTicketSupply: prize.totalTicketSupply,
