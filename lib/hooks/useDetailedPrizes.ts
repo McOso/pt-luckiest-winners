@@ -1,15 +1,10 @@
-import { useWinnerBalance } from "./useWinnerBalance";
-import { WinnerData, PrizeDetails } from "../interfaces/local-types";
-import { AwardedExternalErc20Tokens, BalanceData, Prize, PrizePoolData } from "../interfaces/response-types";
-import { calculateOdds } from "../utils/calculateOdds";
-import { useEffect, useState } from 'react'
-import { mapWinnerData } from "../utils/mapWinnerData";
-import { processWinnerData } from "../utils/processWinnerData";
-import { QueryClient, useQueries } from "react-query";
+import { PrizeDetails } from "../interfaces/local-types";
+import { AwardedExternalErc20Tokens, PrizePoolData } from "../interfaces/response-types";
+import { useQueries } from "react-query";
 import { fetchWinnerBalance } from "../utils/fetchWinnerBalance";
 
 
-export const useDetailedPrizes = (data: PrizePoolData, setBigWinners: React.Dispatch<React.SetStateAction<WinnerData[]>>) => {
+export const useDetailedPrizes = (data: PrizePoolData) => {
 
   let detailedPrizes = new Array<PrizeDetails>();
 
@@ -39,8 +34,6 @@ export const useDetailedPrizes = (data: PrizePoolData, setBigWinners: React.Disp
     });
   });
 
-  //const [winnerDetails, setWinnerDetails] = useState(new Array<WinnerData>());
-
   const results = useQueries(
     detailedPrizes.map(prize => {
       let lockBlock: number;
@@ -59,25 +52,4 @@ export const useDetailedPrizes = (data: PrizePoolData, setBigWinners: React.Disp
     detailedPrizes,
     results
   };
-
-  // useEffect(() =>{
-  //   if (results.some(x => x.isError)){
-  //     console.error(JSON.stringify(results.find(x => x.error)))
-  //   }
-  //   else if (results.some(x => x.isLoading)){
-  //     // maybe set loading display
-  //   }
-  //   else if (results.every(x => x.status === 'success')){
-  //     const winnerDetails = results.map((x, index) => {
-  //       detailedPrizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
-  //       const odds = calculateOdds(detailedPrizes[index])
-  //       const winnerData = mapWinnerData(detailedPrizes[index], odds)
-  //       return winnerData;
-  //     })
-
-  //     const bigWinners = processWinnerData(winnerDetails);
-  //     setBigWinners(bigWinners);
-  //   }
-
-  // }, [results])
 }

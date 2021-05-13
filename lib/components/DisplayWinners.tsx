@@ -20,7 +20,6 @@ export const DisplayWinners = (props) => {
   // TODO: 
   //  - truncate winner address => 0xe23..cf4
   //  - display lootbox winnings in a meaningful manner
-  //  - display total winnings in $ format
   return (
     <Table striped bordered hover variant="dark">
       <thead>

@@ -1,17 +1,11 @@
-import React, { useState } from 'react'
-import { useQueryClient } from 'react-query';
-import { Col } from 'react-bootstrap';
+import React from 'react'
 import { useDetailedPrizes } from '../hooks/useDetailedPrizes';
-import { WinnerData } from '../interfaces/local-types';
 import { DisplayWinners } from './DisplayWinners';
 
 export const BigWinners = (props) => {
   const { mdata } = props
-  const [bigWinners, setBigWinners] = useState(new Array<WinnerData>())
 
-  const queryClient = useQueryClient();
-
-  const {detailedPrizes, results} = useDetailedPrizes(mdata, setBigWinners);
+  const {detailedPrizes, results} = useDetailedPrizes(mdata);
 
   return (
     <>

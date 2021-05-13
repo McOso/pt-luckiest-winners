@@ -1,6 +1,4 @@
-import { useQueries, useQuery } from "react-query";
-import { request, gql } from "graphql-request";
-import { PrizePoolData } from "../interfaces/response-types";
+import { useQueries } from "react-query";
 import { ExternalAward, WinnerData } from "../interfaces/local-types";
 import { fetchUniswapUSD } from "../utils/fetchUniswapUSD";
 

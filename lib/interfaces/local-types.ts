@@ -1,6 +1,6 @@
 import { AwardedExternalErc20Tokens } from "./response-types";
 
-// id = Token.id
+// id = Token.id << which is token address
 export interface PrizeDetails {
   underlyingCollateralSymbol: string,
   awardedTimestamp: string,
