@@ -1,10 +1,10 @@
 import React from 'react'
-import { Table } from 'react-bootstrap';
+import { CardDeck, Col, Row } from 'react-bootstrap';
 import { BalanceData } from '../interfaces/response-types';
 import { calculateOdds } from '../utils/calculateOdds';
 import { mapWinnerData } from '../utils/mapWinnerData';
 import { processWinnerData } from '../utils/processWinnerData';
-import { LootBoxDetails } from './LootBoxDetails';
+import { WinnerCard } from './WinnerCard';
 
 export const DisplayWinners = (props) => {
   const { mprizes, mresults } = props
@@ -17,40 +17,28 @@ export const DisplayWinners = (props) => {
   })
   const bigWinners = processWinnerData(winnerDetails);
 
+  const firstWinner = bigWinners[0];
+  const twoToTenWinners = bigWinners.slice(1,10);
+
   // TODO: 
   //  - truncate winner address => 0xe23..cf4
   //  - display lootbox winnings in a meaningful manner
   return (
-    <Table striped bordered hover variant="dark">
-      <thead>
-        <tr>
-          <th>Rank</th>
-          <th>Address</th>
-          <th>Prize Pool</th>
-          <th>Win Date</th>
-          <th>Tickets Entered</th>
-          <th>Odds of Winning</th>
-          <th>Main Prize Won</th>
-          <th>Lootbox Prize Won</th>
-          <th>Total Winnings</th>
-        </tr>
-      </thead>
-      <tbody>
-        {bigWinners.map((winner, index) => {
+    <>
+      <Row className="mb-2">
+        <CardDeck className="mx-auto">
+          <WinnerCard key={'card' + 0 + firstWinner.address} mwinner={firstWinner} mindex={0} />
+        </CardDeck>
+      </Row>
+      <CardDeck>
+        {twoToTenWinners.map((winner, index) => {
           return (
-            <tr key={index}>
-              <td>{index + 1}</td>
-              <td>{winner.address}</td>
-              <td>{winner.poolSymbol}</td>
-              <td>{winner.winDate.toDateString()}</td>
-              <td>{winner.balance.toFixed(2)}</td>
-              <td>1 in {Math.floor(winner.odds)}</td>
-              <td>{winner.winnings.toFixed(2) + ' ' + winner.poolSymbol}</td>
-              <LootBoxDetails mdata={winner}/>
-            </tr>
+            <Col xl={4} lg={12} md={12} sm={12} xs={12} className="mb-2">
+              <WinnerCard key={'card' + (index + 1) + firstWinner.address} mwinner={winner} mindex={(index + 1)} />
+            </Col>
           )
         })}
-      </tbody>
-    </Table>
+      </CardDeck>
+    </>
   )
 }

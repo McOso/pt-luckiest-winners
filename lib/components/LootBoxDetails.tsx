@@ -10,7 +10,7 @@ export const LootBoxDetails = (props) => {
   return (
     <>
     {results.some(x => x.isError) ? (<span>Error: {JSON.stringify(results.find(x => x.error))}</span>) : results.some(x => x.isLoading) ? (
-      <td>Loading..</td>
+      <p>Loading..</p>
     ) : <DisplayLootBox mdata={mdata} mresults={results} />}
     </>
   )

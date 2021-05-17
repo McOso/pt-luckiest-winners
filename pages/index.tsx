@@ -21,10 +21,6 @@ export default function Home() {
         <LeaderBoard />
                 
       </main>
-
-      <footer className={styles.footer}>
-        <p>Footer</p>
-      </footer>
     </Container>
   )
 }
