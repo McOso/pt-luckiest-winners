@@ -5,10 +5,10 @@ import { LootBoxDetails } from './LootBoxDetails';
 import styles from '../../assets/styles/Home.module.css'
 
 export const WinnerCard = (props) => {
-  const { mwinner, mindex } = props
+  const { mwinner, mindex, main} = props
 
   return (
-    <Card className="mx-auto">
+    <Card className={`mx-auto ${main ? styles.glow + ' mb-3' : ''}`}>
       <Card.Header>
         <Row>
           <Col className="text-left" xs={6}>

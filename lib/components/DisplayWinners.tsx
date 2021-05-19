@@ -26,7 +26,7 @@ export const DisplayWinners = (props) => {
   return (
     <>
       <CardDeck className="mx-auto mb-2">
-        <WinnerCard key={'card' + 0 + firstWinner.address} mwinner={firstWinner} mindex={0} />
+        <WinnerCard key={'card' + 0 + firstWinner.address} mwinner={firstWinner} mindex={0} main/>
       </CardDeck>
       <CardDeck>
         {twoToTenWinners.map((winner, index) => {

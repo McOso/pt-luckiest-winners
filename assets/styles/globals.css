@@ -26,4 +26,8 @@ hr {
 
 .card {
   max-width: 50vh;
+  /*background-image: radial-gradient(circle at 20%, red, gold);*/
+  /* background-image: linear-gradient(to bottom right, rgba(231, 202, 38, 0.712) 15%,#cfc09f 25%, #cfc09f 22%, #cfc09f 24%,#ffecb3 36%); */
+  /* background-image: linear-gradient(to bottom right, rgba(231, 202, 38, 0.712) 15%,#cfc09f 25%, #f5d693 20%, #ddbc75 22%,#ffecb3 30%); */
+  background-image: linear-gradient(to bottom right, rgba(231, 202, 38, 0.712) 15%,#e9c371 25%, #f5d693 35%, #ddbc75c4 55%,#fff45891 80%,#fff458a4 90%);
 }

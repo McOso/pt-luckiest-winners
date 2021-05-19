@@ -2,6 +2,7 @@ import React from 'react'
 import { Button, Card, CardColumns, Col, Container, Modal, Row } from 'react-bootstrap';
 import { calculateGrossWinnings } from '../utils/calculateGrossWinnings';
 import { calculateUSD } from '../utils/calculateUSD'
+import styles from '../../assets/styles/Home.module.css'
 
 
 function LootBoxDetailsModal(props) {
@@ -11,9 +12,11 @@ function LootBoxDetailsModal(props) {
       size="lg"
       aria-labelledby="contained-modal-title-vcenter"
       centered
+      className={styles.lootBoxModalBackdrop}
+      contentClassName={styles.lootBoxModalContent}
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+        <Modal.Title className={styles.lootBoxTitle} id="contained-modal-title-vcenter">
           Loot Box Details
         </Modal.Title>
       </Modal.Header>
@@ -59,7 +62,7 @@ export const DisplayLootBox = (props) => {
             <p className="mt-0 pt-0">{mdata.winnings.toFixed(2) + ' ' + mdata.poolSymbol}</p>
           </Col>
           <Col className="text-right" xs={6}>
-            {mdata.externalAwards ? <Button variant="secondary" onClick={() => setLootBoxShow(true)}>
+            {mdata.externalAwards ? <Button className={styles.lootBoxButton} variant="warning" onClick={() => setLootBoxShow(true)}>
               Loot Box
             </Button> : <></>}
           </Col>
@@ -67,7 +70,7 @@ export const DisplayLootBox = (props) => {
         <Row>
           <Col className="text-center">
             <h3>Total Prize</h3>
-            <h4>{'$' + gross.toFixed(2)}</h4>
+            <h4 className={styles.textBold}>{'$' + gross.toFixed(2)}</h4>
           </Col>
         </Row>
       </Card.Footer>
