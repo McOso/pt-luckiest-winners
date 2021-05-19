@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button, Card, CardColumns, CardDeck, CardGroup, Col, Container, Modal, Row } from 'react-bootstrap';
+import { Button, Card, CardColumns, Col, Container, Modal, Row } from 'react-bootstrap';
 import { calculateGrossWinnings } from '../utils/calculateGrossWinnings';
 import { calculateUSD } from '../utils/calculateUSD'
 
