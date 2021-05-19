@@ -1,11 +1,15 @@
-.bg-pool {
+.bgPool {
   background-color: rgb(50,2,94);
 }
 
 .titleMain {
   text-align: center;
   color: white;
-  font-size: 46pt;
+  font-size: 42pt;
   font-weight: bolder;
   text-decoration: underline;
+}
+
+.textBold {
+  font-weight: bolder;
 }

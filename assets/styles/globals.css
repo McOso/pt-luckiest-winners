@@ -23,3 +23,7 @@ a {
 hr {
   background-color: white;
 }
+
+.card {
+  max-width: 50vh;
+}

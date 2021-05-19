@@ -22,14 +22,12 @@ function LootBoxDetailsModal(props) {
           <CardColumns>
             {props.isloot ? props.loot.map((award, index) => {
               return (
-                <>
-                  <Card key={'loot' + index + award.amount} className="mx-auto">
-                    <Card.Body>
-                      <p>{award.amount.toPrecision(8) + ' ' + award.symbol}</p>
-                      <p>{'$' + award.amountUSD.toFixed(2)}</p>
-                    </Card.Body>
-                  </Card>
-                </>
+                <Card key={'loot' + index + award.amount} className="mx-auto">
+                  <Card.Body>
+                    <p>{award.amount.toPrecision(8) + ' ' + award.symbol}</p>
+                    <p>{'$' + award.amountUSD.toFixed(2)}</p>
+                  </Card.Body>
+                </Card>
               )
             }) : <></>}
           </CardColumns>
