@@ -26,7 +26,8 @@
   border-color: rgb(233,218,150);
 }
 
-.lootBoxTitle {
+.lootBoxTitle,
+.textWhite {
   color: white;
 }
 

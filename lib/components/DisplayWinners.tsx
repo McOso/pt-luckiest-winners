@@ -1,5 +1,5 @@
 import React from 'react'
-import { CardDeck, Col, Row } from 'react-bootstrap';
+import { CardDeck, Col } from 'react-bootstrap';
 import { BalanceData } from '../interfaces/response-types';
 import { calculateOdds } from '../utils/calculateOdds';
 import { mapWinnerData } from '../utils/mapWinnerData';
@@ -20,9 +20,6 @@ export const DisplayWinners = (props) => {
   const firstWinner = bigWinners[0];
   const twoToTenWinners = bigWinners.slice(1,10);
 
-  // TODO: 
-  //  - truncate winner address => 0xe23..cf4
-  //  - display lootbox winnings in a meaningful manner
   return (
     <>
       <CardDeck className="mx-auto mb-2">

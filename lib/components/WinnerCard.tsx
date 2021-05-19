@@ -1,8 +1,7 @@
 import React from 'react'
-import { Card, Col, OverlayTrigger, Row, Tooltip, Image } from 'react-bootstrap';
+import { Card, Col, OverlayTrigger, Row, Tooltip } from 'react-bootstrap';
 import { shorten } from '../utils/shorten';
 import { LootBoxDetails } from './LootBoxDetails';
-import TrophyImg from '../../assets/res/pooltogether-trophy--detailed.svg'
 import styles from '../../assets/styles/Home.module.css'
 
 export const WinnerCard = (props) => {
