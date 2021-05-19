@@ -10,9 +10,9 @@
   text-decoration: underline;
 }
 
-.textBold {
+.textColor {
   font-weight: bolder;
-  background: linear-gradient(to bottom right, yellow, red, blue);
+  background: linear-gradient(to bottom right, orange, red, blue);
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -35,4 +35,19 @@
 }
 .lootBoxModalContent{
   background-color: rgb(53, 24, 110);
+}
+
+.winnerRank {
+  background: radial-gradient(circle, rgb(255, 246, 160), #da9555, #f55b40, rgba(255, 0, 0, 0.363));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% auto;
+  animation: textShine 5s ease-in-out infinite alternate;
+}
+
+@keyframes textShine {
+  to {
+    background-position: 100%;
+  }
 }

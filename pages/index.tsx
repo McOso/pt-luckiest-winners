@@ -19,7 +19,7 @@ export default function Home() {
       <header>
         <Navbar>
           <Navbar.Brand>
-            <Image width="200px" alt='discord logo' src={PTLogo} className='m-1' />
+            <Image width="200px" alt='pt logo' src={PTLogo} className='m-1' />
           </Navbar.Brand>
         </Navbar>
       </header>
@@ -44,7 +44,7 @@ export default function Home() {
             </Nav.Item>
             <Nav.Item>
               <Nav.Link href="https://github.com/McOso" target="_blank">
-                <Image width="35px" alt='discord logo' src={GithubLogo} className='m-1' />
+                <Image width="35px" alt='github logo' src={GithubLogo} className='m-1' />
                 @McOso
               </Nav.Link>
             </Nav.Item>

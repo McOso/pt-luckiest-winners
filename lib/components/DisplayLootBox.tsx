@@ -70,7 +70,7 @@ export const DisplayLootBox = (props) => {
         <Row>
           <Col className="text-center">
             <h3>Total Prize</h3>
-            <h4 className={styles.textBold}>{'$' + gross.toFixed(2)}</h4>
+            <h4 className={styles.textColor}>{'$' + gross.toFixed(2)}</h4>
           </Col>
         </Row>
       </Card.Footer>
