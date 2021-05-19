@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from 'react-query/devtools'
-import '../styles/globals.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import '../assets/styles/globals.css'
 
 // set staleTime to 12 hours
 // 

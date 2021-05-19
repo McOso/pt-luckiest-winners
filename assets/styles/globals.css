@@ -1,0 +1,30 @@
+html,
+body {
+  background-color: rgb(50,2,94);
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.nav-item > a {
+  color: white;
+}
+
+hr {
+  background-color: white;
+}
+
+.card {
+  max-width: 380px;
+  background-image: linear-gradient(to bottom right, rgba(231, 202, 38, 0.712) 15%,#e9c371 25%, #f5d693 35%, #ddbc75c4 55%,#fff45891 80%,#fff458a4 90%);
+}
