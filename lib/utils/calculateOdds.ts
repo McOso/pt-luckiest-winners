@@ -1,3 +1,5 @@
+/* Inspired by: https://github.com/pooltogether/pooltogether-community-ui/blob/master/lib/utils/calculateOdds.js */
+
 import { ethers } from 'ethers'
 import { PrizeDetails } from '../interfaces/local-types'
 

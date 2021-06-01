@@ -10,8 +10,6 @@ export const calculateGrossWinnings = (winner: WinnerData, totals: ExternalAward
     })
   }
 
-  // TODO: get main prize non stable coin usd price - like UNI
-
   if (winner.poolSymbol === 'USDC' || winner.poolSymbol === 'DAI'){
     winner.grossUSDWinnings = winner.winnings + extTotalUSD;
   }else{
