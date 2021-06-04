@@ -26,5 +26,5 @@ hr {
 
 .card {
   max-width: 380px;
-  background-image: linear-gradient(to bottom right, rgb(255,212,105),rgb(255,182,54));
+  background-image: radial-gradient(circle at center, rgba(255, 213, 105, 0.747),rgba(255, 181, 54, 0.911));
 }
