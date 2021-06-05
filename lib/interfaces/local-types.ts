@@ -1,5 +1,11 @@
 import { AwardedExternalErc20Tokens } from "./response-types";
 
+export enum QUERY {
+  V1,
+  V3,
+  POLY
+}
+
 // id = Token.id << which is token address
 export interface PrizeDetails {
   underlyingCollateralSymbol: string,

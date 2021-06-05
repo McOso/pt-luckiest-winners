@@ -1,10 +1,10 @@
-import { PrizeDetails } from "../interfaces/local-types";
+import { PrizeDetails, QUERY } from "../interfaces/local-types";
 import { AwardedExternalErc20Tokens, PrizePoolData } from "../interfaces/response-types";
 import { useQueries } from "react-query";
 import { fetchWinnerBalance } from "../utils/fetchWinnerBalance";
 
 
-export const useDetailedPrizes = (data: PrizePoolData) => {
+export const useDetailedPrizes = (data: PrizePoolData, queryType: QUERY) => {
 
   let detailedPrizes = new Array<PrizeDetails>();
 
@@ -27,7 +27,7 @@ export const useDetailedPrizes = (data: PrizePoolData) => {
           id: award.token.id,
           decimals: award.token.decimals
         }
-        if (extAwardTokens && (extAwardTokens[0].winner === details.winner)){
+        if (extAwardTokens && extAwardTokens.length > 0 && (extAwardTokens[0].winner === details.winner)){
           details.additionalAward = [...extAwardTokens];
         }
         detailedPrizes.push(details)
@@ -43,14 +43,12 @@ export const useDetailedPrizes = (data: PrizePoolData) => {
       }
       return {
         queryKey: ['winnerBalance', lockBlock, prize.winner, prize.id],
-        queryFn: () => fetchWinnerBalance(lockBlock, prize.winner, prize.id),
+        queryFn: () => fetchWinnerBalance(lockBlock, prize.winner, prize.id, queryType),
         enabled: !!lockBlock
       }
     })
   )
 
-  return {
-    detailedPrizes,
-    results
-  };
+  const prizeDetailWrapper = {detailedPrizes, results}
+  return prizeDetailWrapper
 }
