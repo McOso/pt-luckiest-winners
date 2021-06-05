@@ -10,7 +10,7 @@ export const calculateGrossWinnings = (winner: WinnerData, totals: ExternalAward
     })
   }
 
-  if (winner.poolSymbol === 'USDC' || winner.poolSymbol === 'DAI'){
+  if (winner.poolSymbol === 'USDC' || winner.poolSymbol === 'DAI' || winner.poolSymbol === 'USDT'){
     winner.grossUSDWinnings = winner.winnings + extTotalUSD;
   }else{
     winner.grossUSDWinnings = extTotalUSD;

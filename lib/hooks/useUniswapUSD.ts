@@ -7,8 +7,8 @@ export const useUniswapUSD = (winnerData: WinnerData) => {
   const externalAwards = winnerData.externalAwards ? winnerData.externalAwards : [{address: 'NAN', symbol: 'NAN', amount: 0}] as ExternalAward[]
 
   const lookupAddresses = externalAwards.flatMap((award) => award.address)
-  if (!lookupAddresses.find((x) => x === 'NAN') || (!(winnerData.poolSymbol === 'USDC' || winnerData.poolSymbol === 'DAI'))){
-    if (!(winnerData.poolSymbol === 'USDC' || winnerData.poolSymbol === 'DAI')){
+  if (!lookupAddresses.find((x) => x === 'NAN') || (!(winnerData.poolSymbol === 'USDC' || winnerData.poolSymbol === 'DAI' || winnerData.poolSymbol === 'USDT'))){
+    if (!(winnerData.poolSymbol === 'USDC' || winnerData.poolSymbol === 'DAI' || winnerData.poolSymbol === 'USDT')){
       const indexToTrash = lookupAddresses.findIndex(x => x === 'NAN');
       if (indexToTrash > -1){
         lookupAddresses.splice(indexToTrash, 1)
