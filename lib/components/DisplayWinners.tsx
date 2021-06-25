@@ -7,15 +7,12 @@ import { processWinnerData } from '../utils/processWinnerData';
 import { WinnerCard } from './WinnerCard';
 
 export const DisplayWinners = (props) => {
-  const { mprizes, mresults } = props
+  const { wrapperv1, wrapperv3, wrapperpoly } = props
 
-  const winnerDetails = mresults.map((x, index) => {
-    mprizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
-    const odds = calculateOdds(mprizes[index])
-    const winnerData = mapWinnerData(mprizes[index], odds)
-    return winnerData;
-  })
-  const bigWinners = processWinnerData(winnerDetails);
+  const winnerDetailsV1 = MapWinnerDetails(wrapperv1)
+  const winnerDetailsV3 = MapWinnerDetails(wrapperv3)
+  const winnerDetailsPoly = MapWinnerDetails(wrapperpoly)
+  const bigWinners = processWinnerData(winnerDetailsV1, winnerDetailsV3, winnerDetailsPoly);
 
   const firstWinner = bigWinners[0];
   const twoToTenWinners = bigWinners.slice(1,10);
@@ -36,4 +33,14 @@ export const DisplayWinners = (props) => {
       </CardDeck>
     </>
   )
+}
+
+const MapWinnerDetails = (prizeDetailWrapper) => {
+  const winnerDetails = prizeDetailWrapper.results.map((x, index) => {
+    prizeDetailWrapper.detailedPrizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
+    const odds = calculateOdds(prizeDetailWrapper.detailedPrizes[index])
+    const winnerData = mapWinnerData(prizeDetailWrapper.detailedPrizes[index], odds)
+    return winnerData;
+  })
+  return winnerDetails
 }
