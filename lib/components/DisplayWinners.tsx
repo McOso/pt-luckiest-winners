@@ -37,10 +37,12 @@ export const DisplayWinners = (props) => {
 
 const MapWinnerDetails = (prizeDetailWrapper) => {
   const winnerDetails = prizeDetailWrapper.results.map((x, index) => {
-    prizeDetailWrapper.detailedPrizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
-    const odds = calculateOdds(prizeDetailWrapper.detailedPrizes[index])
-    const winnerData = mapWinnerData(prizeDetailWrapper.detailedPrizes[index], odds)
-    return winnerData;
+    if (x.status === 'success'){
+      prizeDetailWrapper.detailedPrizes[index].balance = (x.data as BalanceData).controlledTokenBalances[0].balance
+      const odds = calculateOdds(prizeDetailWrapper.detailedPrizes[index])
+      const winnerData = mapWinnerData(prizeDetailWrapper.detailedPrizes[index], odds)
+      return winnerData;
+    }
   })
   return winnerDetails
 }
