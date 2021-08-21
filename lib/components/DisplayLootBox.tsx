@@ -17,9 +17,9 @@ export const DisplayLootBox = (props) => {
     <>
       <Row>
         <Col className="text-center">
-          <h2 className={styles.textColor}>
-            <NumberFormat value={gross.toFixed(2)} displayType={'text'} thousandSeparator={true} prefix={'$'} suffix={' Prize'} />
-          </h2>
+          <h1>
+            <NumberFormat value={gross.toFixed(0)} displayType={'text'} thousandSeparator={true} prefix={'$'} />
+          </h1>
         </Col>
       </Row>
     </>

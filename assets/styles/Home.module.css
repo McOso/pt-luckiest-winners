@@ -1,5 +1,5 @@
 .bgPool {
-  background-color: rgb(50,2,94);
+  background-color: #F9F6FE;
 }
 
 .titleMain {
@@ -14,6 +14,19 @@
   background: linear-gradient(to bottom right, orange, red, blue);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.flexCenter {
+  justify-content: center;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.leaderboardText {
+  text-align: center;
+  padding-bottom: 64px;
 }
 
 .glow{
