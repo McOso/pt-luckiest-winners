@@ -1,4 +1,5 @@
 import { useQueries } from "react-query";
+import { CONSTANTS } from "../constants";
 import { ExternalAward, WinnerData } from "../interfaces/local-types";
 import { fetchUniswapUSD } from "../utils/fetchUniswapUSD";
 
@@ -15,7 +16,7 @@ export const useUniswapUSD = (winnerData: WinnerData) => {
       }
       lookupAddresses.push(winnerData.poolToken);
     }
-    lookupAddresses.push(process.env.PT_USDC_MAIN_ADDRESS)
+    lookupAddresses.push(CONSTANTS.PT_USDC_MAIN_ADDRESS)
   }
 
   let lockBlock;
