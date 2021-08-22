@@ -7,7 +7,7 @@ import LeaderboardTextImg from '../public/Leaderboard-text.svg'
 import BrandLogo from '../public/Brand.svg'
 import styles from '../assets/styles/Home.module.css'
 import { DepositButton } from '../lib/components/DepositButton'
-import ptIconImg from '../public/PoolTogether-Icon.png'
+import ptIconImg from '../public/PoolTogether-Icon.svg'
 
 
 export default function Home() {
