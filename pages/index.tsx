@@ -22,13 +22,13 @@ export default function Home() {
 
       <header>
         <div className={styles.textCenter}>
-          <Image width="340" height="340" src={BrandLogo} layout="intrinsic" />
+          <Image width="340" height="340" src={BrandLogo.src} layout="intrinsic" />
         </div>
       </header>
       <br />
       <main>
         <div className={styles.leaderboardText}>
-          <Image width="584" height="253" src={LeaderboardTextImg} layout="intrinsic" />
+          <Image width="584" height="253" src={LeaderboardTextImg.src} layout="intrinsic" />
         </div>
 
         <br />
@@ -47,7 +47,7 @@ export default function Home() {
           <Col md="auto">
             <Row className={styles.flexRow}>
               <p className={styles.footerText}>Proudly made by</p>
-              <Image width="50" height="50" src={ptIconImg} layout="intrinsic" />
+              <Image width="50" height="50" src={ptIconImg.src} layout="intrinsic" />
               <p className={styles.footerText}>community ✌✨️</p>
             </Row>
           </Col>
