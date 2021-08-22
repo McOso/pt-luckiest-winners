@@ -8,8 +8,12 @@ import NumberFormat from 'react-number-format'
 export const WinnerCard = (props) => {
   const { mwinner, mindex, main} = props
 
+  const playerClick = (address: string) => {
+    window.location.href = 'https://app.pooltogether.com/players/' + address
+  }
+
   return (
-    <Card className={`mx-auto ${classes.card}`}>
+    <Card className={`mx-auto ${classes.card}`} onClick={() => { playerClick(mwinner.address) }}>
       <Card.Body>
         <Row className="mb-4">
           <Col className="text-left" xs={6}>
@@ -31,16 +35,7 @@ export const WinnerCard = (props) => {
         </div>
       </Card.Body>
       <Card.Footer className={`mx-auto ${classes.cardFooter}`}>
-        <OverlayTrigger
-          placement="bottom"
-          overlay={
-            <Tooltip id={`tooltip-${mwinner.address}`}>
-              {mwinner.address}
-            </Tooltip>
-          }
-        >
-          <a className="" href={`https://app.pooltogether.com/players/${mwinner.address}`} target="_blank">View Player</a>
-        </OverlayTrigger>
+        <p>Click to View Player</p>
       </Card.Footer>
     </Card>
   )

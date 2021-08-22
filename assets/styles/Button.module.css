@@ -41,7 +41,7 @@
 }
 
 .button:active {
-  background: #7E46F2;
+  background: #7E46F2 !important;
 
   /* default */
   

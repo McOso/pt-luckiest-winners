@@ -5,7 +5,7 @@ body {
   margin: 0;
   font-family: roc-grotesk, roc-grotesk-wide, sans-serif;
   color:#7E46F2;
-  ;
+  background-image: url('/Gradient-BG.svg');
 }
 
 a {
@@ -60,7 +60,7 @@ p {
 #mainFooter {
   width: 100%;
   height: 240px;
-  background-image: url('/BG.png');
+  background-image: url('/footer-bg.svg');
   background-size: 100% 100%;
   margin-top: 200px;
 }
@@ -72,7 +72,7 @@ p {
   }
 
   #mainFooter {
-    background-image: url('/mobile-BG.png');
+    background-image: url('/mobile-footer-bg.svg');
     height: 160px;
   }
 }
