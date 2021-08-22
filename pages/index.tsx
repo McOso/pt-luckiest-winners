@@ -3,11 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { LeaderBoard } from '../lib/components/LeaderBoard'
-//import LeaderboardTextImg from '../assets/res/leaderboard-text.png'
-//import BrandLogo from '../assets/res/brand.png'
+import LeaderboardTextImg from '../assets/res/leaderboard-text.png'
+import BrandLogo from '../assets/res/brand.png'
 import styles from '../assets/styles/Home.module.css'
 import { DepositButton } from '../lib/components/DepositButton'
-//import ptIconImg from '../assets/res/pooltogether-icon.png'
+import ptIconImg from '../assets/res/pooltogether-icon.png'
 
 
 export default function Home() {
@@ -22,13 +22,13 @@ export default function Home() {
 
       <header>
         <div className={styles.textCenter}>
-          {/* <Image width="340" height="340" src={BrandLogo.src} layout="intrinsic" /> */}
+          <Image width="340" height="340" src={BrandLogo.src} layout="intrinsic" />
         </div>
       </header>
       <br />
       <main>
         <div className={styles.leaderboardText}>
-          {/* <Image width="584" height="253" src={LeaderboardTextImg.src} layout="intrinsic" /> */}
+          <Image width="584" height="253" src={LeaderboardTextImg.src} layout="intrinsic" />
         </div>
 
         <br />
@@ -47,7 +47,7 @@ export default function Home() {
           <Col md="auto">
             <Row className={styles.flexRow}>
               <p className={styles.footerText}>Proudly made by</p>
-              {/* <Image width="50" height="50" src={ptIconImg.src} layout="intrinsic" /> */}
+              <Image width="50" height="50" src={ptIconImg.src} layout="intrinsic" />
               <p className={styles.footerText}>community ✌✨️</p>
             </Row>
           </Col>
