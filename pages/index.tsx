@@ -3,11 +3,11 @@ import Image from 'next/image'
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import { LeaderBoard } from '../lib/components/LeaderBoard'
-import LeaderboardTextImg from '../assets/res/LeaderBoard-text.png'
+import LeaderboardTextImg from '../assets/res/leaderboard-text.png'
 import BrandLogo from '../assets/res/Brand.png'
 import styles from '../assets/styles/Home.module.css'
 import { DepositButton } from '../lib/components/DepositButton'
-import ptIconImg from '../assets/res/PoolTogether_Icon.png'
+import ptIconImg from '../assets/res/pooltogether-icon.png'
 
 
 export default function Home() {
