@@ -1,5 +1,5 @@
 .bgPool {
-  background-color: rgb(50,2,94);
+  background-color: #F9F6FE;
 }
 
 .titleMain {
@@ -14,6 +14,19 @@
   background: linear-gradient(to bottom right, orange, red, blue);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.flexCenter {
+  justify-content: center;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.leaderboardText {
+  text-align: center;
+  padding-bottom: 64px;
 }
 
 .glow{
@@ -35,6 +48,36 @@
 }
 .lootBoxModalContent{
   background-color: rgb(53, 24, 110);
+}
+
+.callToAction {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 120px;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+}
+
+.footerText {
+  color: white;
+  margin: unset;
+  padding-right: 5px;
+  padding-left: 5px;
 }
 
 .winnerRank {

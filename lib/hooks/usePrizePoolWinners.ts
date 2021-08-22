@@ -1,11 +1,12 @@
 import { useQuery } from "react-query";
 import { request, gql } from "graphql-request";
 import { PrizePoolData } from "../interfaces/response-types";
+import { CONSTANTS } from "../constants";
 
 export const usePrizePoolWinners = () => {
-  const ENDPOINT_V1 = process.env.PT_GRAPHQL_ENDPOINT_URI;
-  const ENDPOINT_V3 = process.env.PT_GRAPHQL_V3_ENDPOINT_URI;
-  const ENDPOINT_POLY = process.env.PT_GRAPHQL_POLY_ENDPOINT_URI;
+  const ENDPOINT_V1 = CONSTANTS.PT_GRAPHQL_ENDPOINT_URI
+  const ENDPOINT_V3 = CONSTANTS.PT_GRAPHQL_V3_ENDPOINT_URI
+  const ENDPOINT_POLY = CONSTANTS.PT_GRAPHQL_POLY_ENDPOINT_URI
 
   const prizePoolsV1 = useQuery("prizePoolWinnersV1", async () => {
     const data: PrizePoolData = await request(

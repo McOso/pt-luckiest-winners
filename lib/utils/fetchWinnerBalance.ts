@@ -1,4 +1,5 @@
 import { request, gql } from "graphql-request";
+import { CONSTANTS } from "../constants";
 import { QUERY } from "../interfaces/local-types";
 import { BalanceData } from "../interfaces/response-types";
 
@@ -7,13 +8,13 @@ export const fetchWinnerBalance = async (lockBlock, winnerAddress: string, token
   let ENDPOINT = ''
   switch (queryType){
     case QUERY.V1: 
-      ENDPOINT = process.env.PT_GRAPHQL_ENDPOINT_URI
+      ENDPOINT = CONSTANTS.PT_GRAPHQL_ENDPOINT_URI
       break;
     case QUERY.V3: 
-      ENDPOINT = process.env.PT_GRAPHQL_V3_ENDPOINT_URI
+      ENDPOINT = CONSTANTS.PT_GRAPHQL_V3_ENDPOINT_URI
       break;
     case QUERY.POLY: 
-      ENDPOINT = process.env.PT_GRAPHQL_POLY_ENDPOINT_URI
+      ENDPOINT = CONSTANTS.PT_GRAPHQL_POLY_ENDPOINT_URI
       break;
   }
   const controlledBalanceId = winnerAddress + '-' + tokenId;

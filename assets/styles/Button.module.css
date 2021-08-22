@@ -1,0 +1,79 @@
+.button {
+  background: #7E46F2;
+  width: 552px;
+  height: 104px;
+
+  padding-left: 5vw;
+  padding-right: 5vw;
+
+  border-color: unset;
+
+  font-family: roc-grotesk-wide;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  /* identical to box height, or 120% */
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  letter-spacing: -0.01em;
+
+  color: #FFFFFF;
+
+  /* default */
+
+  box-shadow: 0px 10px 20px rgba(126, 70, 242, 0.05), 0px 7.27344px 13.4805px rgba(126, 70, 242, 0.0404687), 0px 5.0625px 8.71875px rgba(126, 70, 242, 0.03375), 0px 3.32031px 5.41016px rgba(126, 70, 242, 0.0289063), 0px 2px 3.25px rgba(126, 70, 242, 0.025), 0px 1.05469px 1.93359px rgba(126, 70, 242, 0.0210938), 0px 0.4375px 1.15625px rgba(126, 70, 242, 0.01625), 0px 0.101562px 0.613281px rgba(126, 70, 242, 0.00953125);
+
+  border-radius: 64px;
+}
+
+.button:hover {
+  background: #7E46F2;
+
+  /* default */
+
+  box-shadow: 0px 40px 50px rgba(126, 70, 242, 0.05), 0px 29.0938px 33.7012px rgba(126, 70, 242, 0.0404687), 0px 20.25px 21.7969px rgba(126, 70, 242, 0.03375), 0px 13.2812px 13.5254px rgba(126, 70, 242, 0.0289063), 0px 8px 8.125px rgba(126, 70, 242, 0.025), 0px 4.21875px 4.83398px rgba(126, 70, 242, 0.0210938), 0px 1.75px 2.89062px rgba(126, 70, 242, 0.01625), 0px 0.40625px 1.5332px rgba(126, 70, 242, 0.00953125);
+
+  border-radius: 64px;
+}
+
+.button:active {
+  background: #7E46F2 !important;
+
+  /* default */
+  
+  box-shadow: 0px 10px 20px rgba(126, 70, 242, 0.00953125), 0px 7.27344px 13.4805px rgba(126, 70, 242, 0.01625), 0px 5.0625px 8.71875px rgba(126, 70, 242, 0.0210938), 0px 3.32031px 5.41016px rgba(126, 70, 242, 0.025), 0px 2px 3.25px rgba(126, 70, 242, 0.0289063), 0px 1.05469px 1.93359px rgba(126, 70, 242, 0.03375), 0px 0.4375px 1.15625px rgba(126, 70, 242, 0.0404687), 0px 0.101562px 0.613281px rgba(126, 70, 242, 0.05);
+  
+  border-radius: 64px;
+}
+
+.button:focus {
+  background: #7E46F2 !important;
+
+  /* default */
+  
+  box-shadow: 0px 10px 20px rgba(126, 70, 242, 0.00953125), 0px 7.27344px 13.4805px rgba(126, 70, 242, 0.01625), 0px 5.0625px 8.71875px rgba(126, 70, 242, 0.0210938), 0px 3.32031px 5.41016px rgba(126, 70, 242, 0.025), 0px 2px 3.25px rgba(126, 70, 242, 0.0289063), 0px 1.05469px 1.93359px rgba(126, 70, 242, 0.03375), 0px 0.4375px 1.15625px rgba(126, 70, 242, 0.0404687), 0px 0.101562px 0.613281px rgba(126, 70, 242, 0.05);
+  
+  border-radius: 64px;
+}
+
+.deposit {
+  font-family: roc-grotesk;
+  font-weight: 700;
+  font-style: normal;
+  size: 24px;
+  line-height: 36px;
+  font-size: x-large;
+}
+
+.cardFooter {
+  background-color: unset;
+  border-top: unset;
+}
+
+.cardCenter {
+  margin-top: 58px;
+}

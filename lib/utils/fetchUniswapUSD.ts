@@ -1,9 +1,10 @@
 import { request, gql } from "graphql-request";
+import { CONSTANTS } from "../constants";
 import { UniTokenDataResult } from "../interfaces/response-types";
 
 export const fetchUniswapUSD = async (lBlock, tId: string) => {
 
-  const ENDPOINT = process.env.PT_UNISWAP_ENDPOINT_URI;
+  const ENDPOINT = CONSTANTS.PT_UNISWAP_ENDPOINT_URI;
 
   const data: UniTokenDataResult = await request(
     ENDPOINT,

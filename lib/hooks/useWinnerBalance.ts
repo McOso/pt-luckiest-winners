@@ -1,10 +1,11 @@
 import { useQuery } from "react-query";
 import { request, gql } from "graphql-request";
 import { BalanceData } from "../interfaces/response-types";
+import { CONSTANTS } from "../constants";
 
 export const useWinnerBalance = (lockBlock, winnerAddress: string, tokenId: string) => {
 
-  const ENDPOINT = process.env.PT_GRAPHQL_ENDPOINT_URI;
+  const ENDPOINT = CONSTANTS.PT_GRAPHQL_ENDPOINT_URI;
   const controlledBalanceId = winnerAddress + '-' + tokenId;
 
   return useQuery(["winnerBalance", lockBlock, winnerAddress, tokenId], async () => {
