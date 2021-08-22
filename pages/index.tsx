@@ -1,17 +1,18 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import React from 'react'
-import { Container, Nav, Navbar } from 'react-bootstrap'
+import { Col, Container, Row } from 'react-bootstrap'
 import { LeaderBoard } from '../lib/components/LeaderBoard'
-import DiscordLogo from '../assets/res/discord-footer.svg'
-import GithubLogo from '../assets/res/github-footer.svg'
 import LeaderboardTextImg from '../assets/res/LeaderBoard_text.png'
 import BrandLogo from '../assets/res/Brand.png'
 import styles from '../assets/styles/Home.module.css'
+import { DepositButton } from '../lib/components/DepositButton'
+import ptIconImg from '../assets/res/PoolTogether_Icon.png'
 
 
 export default function Home() {
   return (
+    <>
     <Container>
       <Head>
         <title>PoolTogether Luckiest Winners</title>
@@ -34,25 +35,25 @@ export default function Home() {
 
         <LeaderBoard />
 
-        <footer>
-          <hr />
-          {/* <Nav>
-            <Nav.Item>
-              <Nav.Link href="https://discordapp.com/users/667834273289732116" target="_blank">
-                <Image width="35px" alt='discord logo' src={DiscordLogo} className='m-1' />
-                @McOso#7958
-              </Nav.Link>
-            </Nav.Item>
-            <Nav.Item>
-              <Nav.Link href="https://github.com/McOso" target="_blank">
-                <Image width="35px" alt='github logo' src={GithubLogo} className='m-1' />
-                @McOso
-              </Nav.Link>
-            </Nav.Item>
-          </Nav> */}
-        </footer>
-                
+        <div className={styles.callToAction}>
+          <h3>Want to test your luck?</h3>
+          <DepositButton />
+        </div>                
       </main>
     </Container>
+    <footer id="mainFooter">
+      <Container fluid className={styles.flexContainer}>
+        <Row className="justify-content-md-center">
+          <Col md="auto">
+            <Row className={styles.flexRow}>
+              <p className={styles.footerText}>Proudly made by</p>
+              <Image width="50" height="50" src={ptIconImg} layout="intrinsic" />
+              <p className={styles.footerText}>community ✌✨️</p>
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+    </footer>
+    </>
   )
 }

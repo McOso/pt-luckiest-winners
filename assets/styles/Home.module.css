@@ -50,6 +50,36 @@
   background-color: rgb(53, 24, 110);
 }
 
+.callToAction {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 120px;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+}
+
+.flexRow {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  height: 100%;
+}
+
+.footerText {
+  color: white;
+  margin: unset;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
 .winnerRank {
   background: radial-gradient(circle, rgb(255, 246, 160), #da9555, #f55b40, rgba(255, 0, 0, 0.363));
   -webkit-background-clip: text;
