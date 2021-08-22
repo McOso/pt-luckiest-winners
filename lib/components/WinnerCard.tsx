@@ -9,7 +9,9 @@ export const WinnerCard = (props) => {
   const { mwinner, mindex, main} = props
 
   const playerClick = (address: string) => {
-    window.location.href = 'https://app.pooltogether.com/players/' + address
+    const url = 'https://app.pooltogether.com/players/' + address
+    const newWindow = window.open(url, '_blank', 'noopener,noreferrer')
+    if (newWindow) newWindow.opener = null
   }
 
   return (
