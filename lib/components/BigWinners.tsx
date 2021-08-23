@@ -3,6 +3,7 @@ import { useDetailedPrizes } from '../hooks/useDetailedPrizes';
 import { DisplayWinners } from './DisplayWinners';
 import styles from '../../assets/styles/Home.module.css'
 import { QUERY } from '../interfaces/local-types';
+import { Loader } from './Loader';
 
 export const BigWinners = (props) => {
   const { mdata } = props
@@ -17,7 +18,7 @@ export const BigWinners = (props) => {
       ? (<span className={styles.textWhite}>Error: Something went wrong with results..</span>) 
       : (prizeDetailWrapperV1.results.some(x => x.isLoading) || prizeDetailWrapperV3.results.some(x => x.isLoading) || prizeDetailWrapperPoly.results.some(x => x.isLoading))
       ? (
-      <h4 className={styles.textWhite}>Loading..</h4>
+        <Loader />
     ) : <DisplayWinners wrapperv1={prizeDetailWrapperV1} wrapperv3={prizeDetailWrapperV3} wrapperpoly={prizeDetailWrapperPoly} />}
     </>
   )
