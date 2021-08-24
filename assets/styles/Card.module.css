@@ -7,6 +7,8 @@
 
   margin-bottom: 32px !important;
 
+  transition: .2s ease-in-out;
+
   border: unset;
 
   background: linear-gradient(180deg, #EEE7FD 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
@@ -20,6 +22,8 @@
 
   /* hover */
 
+  transition: .2s ease-in-out;
+  
   box-shadow: 0px 40px 50px rgba(126, 70, 242, 0.05), 0px 29.0938px 33.7012px rgba(126, 70, 242, 0.0404687), 0px 20.25px 21.7969px rgba(126, 70, 242, 0.03375), 0px 13.2812px 13.5254px rgba(126, 70, 242, 0.0289063), 0px 8px 8.125px rgba(126, 70, 242, 0.025), 0px 4.21875px 4.83398px rgba(126, 70, 242, 0.0210938), 0px 1.75px 2.89062px rgba(126, 70, 242, 0.01625), 0px 0.40625px 1.5332px rgba(126, 70, 242, 0.00953125);
 
   border-radius: 40px;
