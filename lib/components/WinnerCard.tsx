@@ -31,10 +31,10 @@ export const WinnerCard = (props) => {
     <Card className={`mx-auto ${classes.card}`} onClick={() => { playerClick(mwinner.address) }}>
       <Card.Body>
         <Row className="mb-4">
-          <Col className="text-left" xs={6}>
+          <Col className="text-left" xs={5}>
             <p>{'Prize #' + (mindex + 1) + ' 🏆'}</p>
           </Col>
-          <Col className="text-right" xs={6}>
+          <Col className="text-right" xs={7}>
             <p>{mwinner.winDate.toDateString()}</p>
           </Col>
         </Row>
