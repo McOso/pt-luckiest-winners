@@ -19,13 +19,13 @@ export const DisplayWinners = (props) => {
 
   return (
     <>
-      <CardDeck className="mx-auto mb-4">
+      <CardDeck className="mx-auto padding12">
         <WinnerCard key={'card' + 0 + firstWinner.address} mwinner={firstWinner} mindex={0} main/>
       </CardDeck>
       <CardDeck>
         {twoToTenWinners.map((winner, index) => {
           return (
-            <Col key={'col' + (index + 1) + firstWinner.address} xl={4} lg={4} md={12} sm={12} xs={12} className="mb-3">
+            <Col key={'col' + (index + 1) + firstWinner.address} xl={4} lg={4} md={12} sm={12} xs={12} className="padding12">
               <WinnerCard key={'card' + (index + 1) + firstWinner.address} mwinner={winner} mindex={(index + 1)} />
             </Col>
           )

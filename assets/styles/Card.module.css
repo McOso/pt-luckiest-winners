@@ -5,6 +5,8 @@
   min-width: 320px;
   min-height: 360px;
 
+  margin-bottom: 32px !important;
+
   border: unset;
 
   background: linear-gradient(180deg, #EEE7FD 0%, rgba(255, 255, 255, 0) 100%), #FFFFFF;
@@ -39,4 +41,9 @@
 
 .cardCenter {
   margin-top: 58px;
+}
+
+.emojiGroup {
+  font-size: 24px;
+  line-height: 36px;
 }
