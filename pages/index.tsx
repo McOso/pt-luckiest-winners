@@ -18,6 +18,10 @@ export default function Home() {
         <title>PoolTogether Luckiest Winners</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="stylesheet" href="https://use.typekit.net/jwv5rga.css" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="PoolTogether Luckiest Winners" />
+        <meta name="twitter:description" content="Leaderboard of the luckiest winners on PoolTogether!" />
+        <meta name="twitter:image" content="https://github.com/McOso/pt-luckiest-winners/blob/main/assets/res/small-fish-win_twitter.png?raw=true" />
       </Head>
 
       <header>
